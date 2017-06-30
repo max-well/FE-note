@@ -13,15 +13,28 @@
   var Hello=React.createClass({
     getInitialState: function(){
       return {
-        opacity:1.0
+        opacity:1.0,
+          lala:true
       }
     },
     componentDidMount:function(){
       this.timer=setInterval(function(){
         var opacity=this.state.opacity;
-        opacity-=.05;
         if(opacity<0.1){
-          opacity=1.0;
+            this.setState({
+                lala:false
+            })
+        }else if(opacity>1){
+            this.setState({
+                lala:true
+            })
+        }
+        console.log(this.state.lala)
+
+        if(this.state.lala){
+            opacity-=.05;
+        }else{
+            opacity+=.05;
         }
         this.setState({
           opacity:opacity

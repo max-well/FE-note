@@ -1,37 +1,37 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>state</title>
-  <script src="build/react.js"></script>
-  <script src="build/react-dom.js"></script>
-  <script src="build/browser.min.js"></script>
+    <meta charset="UTF-8">
+    <title>state</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
 </head>
 <body>
 <div id="example"></div>
 <script type="text/babel">
 
-  var LikeButton=React.createClass({
-    getInitialState:function(){ //初始化状态
-      return {liked:true}
-    },
-    handClick:function(event){
-      this.setState({liked:!this.state.liked})
-    },
-    render: function(){
-      var text=this.state.liked?'like':'haven\'t liked';
-      console.log(this.state.liked);
-      return (
-          <p onClick={this.handClick}>
-            you {text} this. Click to toggle.
-          </p>
-      )
-    }
-  })
-  ReactDOM.render(
-      <LikeButton/>,
-      document.getElementById("example")
-  )
+    var LikeButton = React.createClass({
+        getInitialState: function () { //初始化状态
+            return {liked: true}
+        },
+        handClick: function (event) {
+            this.setState({liked: !this.state.liked})
+        },
+        render: function () {
+            var text = this.state.liked ? 'like' : 'haven\'t liked';
+            console.log(this.state.liked);
+            return (
+                    <p onClick={this.handClick}>
+                        you {text} this. Click to toggle.
+                    </p>
+            )
+        }
+    })
+    ReactDOM.render(
+            <LikeButton/>,
+        document.getElementById("example")
+    )
 </script>
 </body>
 </html>
